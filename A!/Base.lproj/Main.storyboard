@@ -49,7 +49,6 @@
         <!--View Controller-->
         <scene sceneID="xau-PR-hCP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="byP-Hp-mPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="l8p-hu-nh0" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SMS-ic-kKR"/>
@@ -75,6 +74,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byP-Hp-mPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="420" y="375"/>
         </scene>
