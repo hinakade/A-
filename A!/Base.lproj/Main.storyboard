@@ -67,6 +67,9 @@
                         </connections>
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="3jw-1w-ggn" kind="push" id="n9w-A8-A0q"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jrl-Eb-1x1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,8 +82,15 @@
                     <view key="view" contentMode="scaleToFill" id="7JI-t4-cYp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="LYn-dC-szB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="X5S-MC-97L"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyj-4r-Xap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,7 +99,7 @@
         <!--View Controller-->
         <scene sceneID="xau-PR-hCP">
             <objects>
-                <viewController id="l8p-hu-nh0" sceneMemberID="viewController">
+                <viewController id="l8p-hu-nh0" customClass="_02ViewController" customModule="A_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F3F-EV-CqC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
