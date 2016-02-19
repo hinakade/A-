@@ -13,6 +13,7 @@ class _02ViewController: UIViewController{
     
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var object: UIImageView!
     
     
     var recorder: AVAudioRecorder!
@@ -23,27 +24,47 @@ class _02ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        if  self.stopButton.enabled == true{
+            print("鳥写真表示")
+        object.image = UIImage(named: "tori.jpg")
+        }else{
+              object.image = UIImage(named: "hoge.jpg")
+        }
+        
+
     }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
+    //写真のアニメーション
+    @IBAction func swpimg(sender: UISwipeGestureRecognizer) {
+        print("写真が動く")
+        UIView.animateWithDuration(1) { () -> Void in
+            self.object.frame = CGRectMake(200, 0, 0, 0)
+        }
+    }
+
+    
+    
     @IBAction func pushRecord(sender: AnyObject) {
         //録音
         if recorder != nil && recorder.recording {
             self.recorder.pause()
-            self.recordButton.setTitle("Continue", forState:.Normal)
+            self.recordButton.setTitle("もう一度叫ぶ？", forState:.Normal)
+            print("こんてにゅー")
+            
         } else {
+            
             self.stopButton.enabled = true
-            self.recordButton.setTitle("Pause", forState:.Normal)
+            self.recordButton.setTitle("叫び終わり", forState:.Normal)
             self.recordWithPermission(true)
             
         }
+        
+
     }
     
     //録音止める
@@ -58,7 +79,7 @@ class _02ViewController: UIViewController{
         self.recorder.stop()
         self.meterTimer.invalidate()
         
-        self.recordButton.setTitle("Record", forState:.Normal)
+        self.recordButton.setTitle("終了", forState:.Normal)
         let session:AVAudioSession = AVAudioSession.sharedInstance()
         var error: NSError?
         do {
@@ -75,6 +96,7 @@ class _02ViewController: UIViewController{
         self.recordButton.enabled = true
     }
     
+   
     
     
     
@@ -183,9 +205,8 @@ class _02ViewController: UIViewController{
 //            apcLabel.text = apc
         }
     }
-//終わり
-
     
+//終わり
     
     
 }
