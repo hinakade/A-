@@ -14,24 +14,20 @@ class _02ViewController: UIViewController{
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var object: UIImageView!
+    @IBOutlet weak var kekka: UIButton!
     
     
     var recorder: AVAudioRecorder!
     var meterTimer: NSTimer!
     var audioPlayer:AVAudioPlayer!
-    
+    var picture = false
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if  self.stopButton.enabled == true{
-            print("鳥写真表示")
-        object.image = UIImage(named: "tori.jpg")
-        }else{
-              object.image = UIImage(named: "hoge.jpg")
-        }
-        
-
+        self.stopButton.enabled = false
+       self.stopButton.hidden = true
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,14 +38,40 @@ class _02ViewController: UIViewController{
     //写真のアニメーション
     @IBAction func swpimg(sender: UISwipeGestureRecognizer) {
         print("写真が動く")
-        UIView.animateWithDuration(1) { () -> Void in
+        UIView.animateWithDuration(1, animations: { () -> Void in
             self.object.frame = CGRectMake(200, 0, 0, 0)
-        }
+            self.picture = false}
+,
+            completion: { finished in
+                self.stopButton.hidden = false
+            })
     }
+    //音再生
+//    If(){
+    
+    @IBAction func tapPlay(sender: AnyObject) {
+    let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask,true)
+    var docsDir: AnyObject = dirPaths[0]
+    var soundFilePath = docsDir.stringByAppendingPathComponent("Recorded.m4a")
+    let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
+    
+    }
+//}
 
     
-    
     @IBAction func pushRecord(sender: AnyObject) {
+       
+        
+        //鳥表示
+        if  self.stopButton.enabled == true{
+            print("鳥写真表示")
+            object.image = UIImage(named: "tori.jpg")
+            
+        }else{
+            object.image = UIImage(named: "")
+        }
+        
+        
         //録音
         if recorder != nil && recorder.recording {
             self.recorder.pause()
@@ -64,6 +86,7 @@ class _02ViewController: UIViewController{
             
         }
         
+       
 
     }
     
@@ -100,7 +123,7 @@ class _02ViewController: UIViewController{
     
     
     
-    
+   ////////////////////////////////////////////////////////////////////////////////////
     func recordWithPermission(setup:Bool) {
         let session:AVAudioSession = AVAudioSession.sharedInstance()
         // ios 8 and later
@@ -208,9 +231,8 @@ class _02ViewController: UIViewController{
     
 //終わり
     
-    
-}
 
+}
 
 
 
