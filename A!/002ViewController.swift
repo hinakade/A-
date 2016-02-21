@@ -40,24 +40,32 @@ class _02ViewController: UIViewController{
         print("写真が動く")
         UIView.animateWithDuration(1, animations: { () -> Void in
             self.object.frame = CGRectMake(200, 0, 0, 0)
-            self.picture = false}
-,
+            self.picture = false
+            
+            //録音再生
+            let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask,true)
+            var docsDir: AnyObject = dirPaths[0]
+            var soundFilePath = docsDir.stringByAppendingPathComponent("Recorded.m4a")
+            let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
+            
+            
+            },
             completion: { finished in
                 self.stopButton.hidden = false
             })
-    }
     //音再生
-//    If(){
-    
-    @IBAction func tapPlay(sender: AnyObject) {
-    let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask,true)
-    var docsDir: AnyObject = dirPaths[0]
-    var soundFilePath = docsDir.stringByAppendingPathComponent("Recorded.m4a")
-    let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
-    
-    }
-//}
+//    if(self.picture == false){
+//    
+//    func tapPlay(sender: AnyObject) {
 
+        
+        
+        
+        
+    
+//    }
+//}
+    }
     
     @IBAction func pushRecord(sender: AnyObject) {
        
@@ -85,8 +93,6 @@ class _02ViewController: UIViewController{
             self.recordWithPermission(true)
             
         }
-        
-       
 
     }
     
