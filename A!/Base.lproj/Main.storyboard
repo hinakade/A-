@@ -159,16 +159,16 @@
             </objects>
             <point key="canvasLocation" x="242" y="355"/>
         </scene>
-        <!--View Controller-->
+        <!--Third View Controller-->
         <scene sceneID="5cP-NV-fcC">
             <objects>
-                <viewController id="nbb-t4-By2" sceneMemberID="viewController">
+                <viewController id="nbb-t4-By2" customClass="ThirdViewController" customModule="A_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d9Q-km-BpE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="IFa-9z-zbf">
-                                <rect key="frame" x="116" y="204" width="97" height="30"/>
+                                <rect key="frame" x="108" y="208" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text" base64-UTF8="YES">
 CDgw54K5A
@@ -184,7 +184,7 @@ CDgw54K5A
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Nu-5y-R3f">
-                                <rect key="frame" x="108" y="378" width="105" height="30"/>
+                                <rect key="frame" x="100" y="355" width="105" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="タイトルに戻る"/>
                                 <connections>
@@ -195,6 +195,9 @@ CDgw54K5A
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="point" destination="IFa-9z-zbf" id="mdw-E6-9gu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J0g-qG-OXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

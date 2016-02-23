@@ -16,7 +16,6 @@ class _02ViewController: UIViewController{
     @IBOutlet weak var object: UIImageView!
     @IBOutlet weak var kekka: UIButton!
     
-    
     var recorder: AVAudioRecorder!
     var meterTimer: NSTimer!
     var audioPlayer:AVAudioPlayer!
@@ -38,18 +37,34 @@ class _02ViewController: UIViewController{
     //写真のアニメーション
     @IBAction func swpimg(sender: UISwipeGestureRecognizer) {
         print("写真が動く")
+        
+        //録音再生
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask,true)
+        var docsDir: AnyObject = dirPaths[0]
+        var soundFilePath = docsDir.stringByAppendingPathComponent("Recorded.m4a")
+        let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
+        
+        var audioError:NSError!
+        
+        //        audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL, error:&audioError)
+        do{
+            self.audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
+        } catch var error1 as NSError {
+            
+            self.audioPlayer = nil
+        }
+        
+        
+        self.audioPlayer.prepareToPlay()
+        self.audioPlayer.play()
+        
+
+        
         UIView.animateWithDuration(1, animations: { () -> Void in
             self.object.frame = CGRectMake(200, 0, 0, 0)
             self.picture = false
             
-            //録音再生
-            let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask,true)
-            var docsDir: AnyObject = dirPaths[0]
-            var soundFilePath = docsDir.stringByAppendingPathComponent("Recorded.m4a")
-            let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
-            
-            
-            },
+                       },
             completion: { finished in
                 self.stopButton.hidden = false
             })
@@ -161,11 +176,11 @@ class _02ViewController: UIViewController{
     func setupRecorder() {
         
         let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask,true)
-        var docsDir: AnyObject = dirPaths[0]
-        var soundFilePath = docsDir.stringByAppendingPathComponent("Recorded.m4a")
+        let docsDir: AnyObject = dirPaths[0]
+        let soundFilePath = docsDir.stringByAppendingPathComponent("Recorded.m4a")
         let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
         
-        var recordSettings:[String: AnyObject] = [
+        let recordSettings:[String: AnyObject] = [
             AVFormatIDKey: UInt(kAudioFormatAppleLossless),
             AVEncoderAudioQualityKey : AVAudioQuality.Max.rawValue,
             AVEncoderBitRateKey : 320000,
@@ -176,7 +191,7 @@ class _02ViewController: UIViewController{
         var error: NSError?
         do {
             self.recorder = try AVAudioRecorder(URL: soundFileURL, settings: recordSettings as [String : AnyObject])
-        } catch var error1 as NSError {
+        } catch let error1 as NSError {
             error = error1
             self.recorder = nil
         }
