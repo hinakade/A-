@@ -32,6 +32,7 @@ class _02ViewController: UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBOutlet weak var playTap: UIButton!
     
     
     //写真のアニメーション
@@ -39,24 +40,23 @@ class _02ViewController: UIViewController{
         print("写真が動く")
         
         //録音再生
-        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask,true)
-        var docsDir: AnyObject = dirPaths[0]
-        var soundFilePath = docsDir.stringByAppendingPathComponent("Recorded.m4a")
-        let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
-        
-        var audioError:NSError!
-        
-        //        audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL, error:&audioError)
-        do{
-            self.audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
-        } catch var error1 as NSError {
-            
-            self.audioPlayer = nil
-        }
-        
-        
-        self.audioPlayer.prepareToPlay()
-        self.audioPlayer.play()
+//        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask,true)
+//        var docsDir: AnyObject = dirPaths[0]
+//        var soundFilePath = docsDir.stringByAppendingPathComponent("Recorded.m4a")
+//        let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
+//        
+//        var audioError:NSError!
+//        
+//        do{
+//            self.audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
+//        } catch var error1 as NSError {
+//            
+//            self.audioPlayer = nil
+//        }
+//        
+//        
+//        self.audioPlayer.prepareToPlay()
+//        self.audioPlayer.play()
         
 
         
@@ -73,14 +73,45 @@ class _02ViewController: UIViewController{
 //    
 //    func tapPlay(sender: AnyObject) {
 
-        
-        
-        
-        
     
 //    }
 //}
     }
+    
+    
+    
+    
+//////////////////////////////////////////////////////////////////////
+   
+    @IBAction func tapPlay(sender: AnyObject) {
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask,true)
+        var docsDir: AnyObject = dirPaths[0]
+        var soundFilePath = docsDir.stringByAppendingPathComponent("Recorded.m4a")
+        let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
+        
+        
+        
+        // auido を再生するプレイヤーを作成する
+        var audioError:NSError!
+        
+        //        audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL, error:&audioError)
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
+        } catch var error1 as NSError {
+            
+            self.audioPlayer = nil
+        }
+        
+        
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+        
+    }
+    
+    //////////////////////////////////////////////////////////////////////
+    
+    
+    
     
     @IBAction func pushRecord(sender: AnyObject) {
        
@@ -106,7 +137,6 @@ class _02ViewController: UIViewController{
             self.stopButton.enabled = true
             self.recordButton.setTitle("叫び終わり", forState:.Normal)
             self.recordWithPermission(true)
-            
         }
 
     }
@@ -145,6 +175,7 @@ class _02ViewController: UIViewController{
     
     
    ////////////////////////////////////////////////////////////////////////////////////
+    
     func recordWithPermission(setup:Bool) {
         let session:AVAudioSession = AVAudioSession.sharedInstance()
         // ios 8 and later

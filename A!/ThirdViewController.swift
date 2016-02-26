@@ -10,14 +10,18 @@ import UIKit
 
 class ThirdViewController: UIViewController {
     @IBOutlet weak var point: UITextField!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var comment: UITextField!
+    
+    override func viewWillAppear(animated: Bool) {
         
-        var voice = ["100","98","90","80","60","50","10"]
-        var r = Int(arc4random()) % voice.count
+        var voice = ["100点","98点","90点","80点","60点","50点","10点"]
+        let r:Int = Int(arc4random() % UInt32(voice.count))
+        
+        
+        var say = ["あなたの声は完璧です","もっと魂を込めると良いかもしれません", "合格点です", "良い叫びですね", "頑張って", "もう一度チャレンジしましょう"]
+        let y:Int = Int(arc4random() % UInt32(say.count))
+        
+        
         
         //結果
         switch(r){
@@ -37,31 +41,40 @@ class ThirdViewController: UIViewController {
             print("10")
         default:
             print("70")
-            
+        }
         
-        point.text = "omikuji[r]"
-
+        //comment結果
+        switch(y){
+        case 0:
+            print("0")
+        case 1:
+            print("1")
+        case 2:
+            print("2")
+        case 3:
+            print("3")
+        case 4:
+            print("4")
+        case 5:
+            print("5")
+        case 6:
+            print("6")
+        default:
+            print("7")
+            
+        }
+        print(voice[r])
+        point.text = voice[r]
+        comment.text = say[y]
+        
     }
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
-    
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

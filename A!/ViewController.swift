@@ -8,25 +8,20 @@
 
 import UIKit
 
+//前述のものです。これを入れないと、音楽は鳴らせません。
+import AVFoundation
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    
-    
-    
-    var omikuji = ["大吉","吉","凶","中吉","末吉","大凶"]
-    var r = Int(arc4random()) % omikuji.count
-        
-   
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        
-    }
-
-
 }
 
+func viewWillAppear(animated: Bool) {
+    //音楽ファイルの準備をします。
+    let bgm = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("recorder", ofType: "mp3")!)
+    
+    //音楽プレイヤーの準備をします。
+    
+    var bgmPlayer: AVAudioPlayer  = try!(AVAudioPlayer(contentsOfURL: bgm, fileTypeHint: nil))
+    
+    //再生します。
+    bgmPlayer.play()
+}
