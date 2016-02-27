@@ -29,10 +29,11 @@ class _02ViewController: UIViewController{
         super.viewDidLoad()
         
         resetBtn.hidden = true
-        
+        self.object.layer.masksToBounds = true
+        self.object.layer.cornerRadius = 50
         // 背景画像01
         UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "yakei.jpg")?.drawInRect(self.view.bounds)
+        UIImage(named: "yama.jpg")?.drawInRect(self.view.bounds)
         
         let image: UIImage! = UIGraphicsGetImageFromCurrentImageContext()
         
@@ -161,7 +162,7 @@ class _02ViewController: UIViewController{
         //鳥表示
         if  self.stopButton.enabled == true{
             print("鳥写真表示")
-            object.image = UIImage(named: "tori.jpg")
+            object.image = UIImage(named: "tama.jpg")
             
             //録音終了
             print("stop")
@@ -373,8 +374,9 @@ class _02ViewController: UIViewController{
     }
     
 //終わり
-
-    
+//飛ばす画像の角を丸くるする
+ 
+//self.tori.jpg.cornerRadius = 10
     
 
 }
