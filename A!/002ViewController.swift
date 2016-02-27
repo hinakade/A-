@@ -22,8 +22,27 @@ class _02ViewController: UIViewController{
     var picture = false
 
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // 背景画像01
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "yakei.jpg")?.drawInRect(self.view.bounds)
+        
+        let image: UIImage! = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        
+        self.view.backgroundColor = UIColor(patternImage: image)
+
+        
+        
+        
         
         self.stopButton.enabled = false
        self.stopButton.hidden = true
@@ -40,23 +59,23 @@ class _02ViewController: UIViewController{
         print("写真が動く")
         
         //録音再生
-//        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask,true)
-//        var docsDir: AnyObject = dirPaths[0]
-//        var soundFilePath = docsDir.stringByAppendingPathComponent("Recorded.m4a")
-//        let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
-//        
-//        var audioError:NSError!
-//        
-//        do{
-//            self.audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
-//        } catch var error1 as NSError {
-//            
-//            self.audioPlayer = nil
-//        }
-//        
-//        
-//        self.audioPlayer.prepareToPlay()
-//        self.audioPlayer.play()
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask,true)
+        var docsDir: AnyObject = dirPaths[0]
+        var soundFilePath = docsDir.stringByAppendingPathComponent("Recorded.m4a")
+        let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
+        
+        var audioError:NSError!
+        
+        do{
+            self.audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
+        } catch var error1 as NSError {
+            
+            self.audioPlayer = nil
+        }
+        
+        
+        self.audioPlayer.prepareToPlay()
+        self.audioPlayer.play()
         
 
         
@@ -107,7 +126,6 @@ class _02ViewController: UIViewController{
         audioPlayer.play()
         
     }
-    
     //////////////////////////////////////////////////////////////////////
     
     
@@ -121,55 +139,81 @@ class _02ViewController: UIViewController{
             print("鳥写真表示")
             object.image = UIImage(named: "tori.jpg")
             
+            //録音終了
+            print("stop")
+            self.recorder.stop()
+            self.meterTimer.invalidate()
+            
+            self.recordButton.setTitle("終了", forState:.Normal)
+            let session:AVAudioSession = AVAudioSession.sharedInstance()
+            var error: NSError?
+            do {
+                try session.setActive(false)
+            } catch let error1 as NSError {
+                error = error1
+                print("could not make session inactive")
+                if let e = error {
+                    print(e.localizedDescription)
+                    return
+                }
+            }
+            self.stopButton.enabled = false
+            
         }else{
+            
             object.image = UIImage(named: "")
+            self.recordButton.setTitle("叫び終わり", forState:.Normal)
+            self.stopButton.enabled = true
+//            録音
+            self.recordWithPermission(true)
+//            
+            
         }
         
+    
         
         //録音
-        if recorder != nil && recorder.recording {
-            self.recorder.pause()
-            self.recordButton.setTitle("もう一度叫ぶ？", forState:.Normal)
-            print("こんてにゅー")
-            
-        } else {
-            
-            self.stopButton.enabled = true
-            self.recordButton.setTitle("叫び終わり", forState:.Normal)
-            self.recordWithPermission(true)
-        }
+        
+//        if recorder != nil && recorder.recording {
+//            self.recorder.pause()
+//            self.recordButton.setTitle("もう一度叫ぶ？", forState:.Normal)
+//            print("こんてにゅー")
+//            
+////        } else {
+//            
+
 
     }
     
     //録音止める
-    @IBAction func pushStop(sender: UIButton) {
-        
-        
-        if recorder == nil {
-            return
-        }
-        
-        print("stop")
-        self.recorder.stop()
-        self.meterTimer.invalidate()
-        
-        self.recordButton.setTitle("終了", forState:.Normal)
-        let session:AVAudioSession = AVAudioSession.sharedInstance()
-        var error: NSError?
-        do {
-            try session.setActive(false)
-        } catch let error1 as NSError {
-            error = error1
-            print("could not make session inactive")
-            if let e = error {
-                print(e.localizedDescription)
-                return
-            }
-        }
-        self.stopButton.enabled = false
-        self.recordButton.enabled = true
-    }
-    
+//    @IBAction func pushStop(sender: UIButton) {
+//        
+//        
+//        if recorder == nil {
+//            return
+//        }
+//        
+//        print("stop")
+//        self.recorder.stop()
+//        self.meterTimer.invalidate()
+//        
+//        self.recordButton.setTitle("終了", forState:.Normal)
+//        let session:AVAudioSession = AVAudioSession.sharedInstance()
+//        var error: NSError?
+//        do {
+//            try session.setActive(false)
+//        } catch let error1 as NSError {
+//            error = error1
+//            print("could not make session inactive")
+//            if let e = error {
+//                print(e.localizedDescription)
+//                return
+//            }
+//        }
+//        self.stopButton.enabled = false
+//        self.recordButton.enabled = true
+//    }
+//    
    
     
     

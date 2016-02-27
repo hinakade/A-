@@ -9,31 +9,60 @@
         <scene sceneID="NLq-cg-Ui4">
             <objects>
                 <viewController id="Tf5-ca-F9r" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="H7p-Nh-TOU">
+                    <view key="view" contentMode="scaleAspectFit" id="H7p-Nh-TOU" customClass="Button_Custom" customModule="A_" customModuleProvider="target" colorLabel="IBBuiltInLabel-Red">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="  A!" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Jco-ho-zcg">
-                                <rect key="frame" x="131" y="237" width="45" height="30"/>
+                            <button opaque="NO" contentMode="topRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="Lju-Js-LBu" customClass="Button_Custom" customModule="A_" customModuleProvider="target">
+                                <rect key="frame" x="103" y="331" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="説明 １マイクに叫ぶ 　２　フリック ３　終了" textAlignment="center" id="aPJ-Ho-pzN">
-                                <rect key="frame" x="90" y="442" width="127" height="84"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lju-Js-LBu">
-                                <rect key="frame" x="130" y="341" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="スタート"/>
+                                <rect key="contentStretch" x="0.40000000000000002" y="0.0" width="1" height="1"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <size key="titleShadowOffset" width="21" height="7"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="始める">
+                                            <attributes>
+                                                <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="18" name="HiraKakuProN-W3"/>
+                                                <font key="NSOriginalFont" size="18" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="clipping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.79845830979999999" blue="0.39030704360000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="l8p-hu-nh0" kind="modal" id="WRY-AP-UJi"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" 叫べ" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" id="Jco-ho-zcg">
+                                <rect key="frame" x="123" y="205" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" text="説明 １マイクに叫ぶ 　２　フリック ３　終了" textAlignment="center" id="aPJ-Ho-pzN">
+                                <rect key="frame" x="86" y="430" width="127" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -94,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyj-4r-Xap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606" y="1001"/>
+            <point key="canvasLocation" x="598" y="1001"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xau-PR-hCP">
@@ -117,6 +146,16 @@
                                     <outletCollection property="gestureRecognizers" destination="DLu-A4-ig1" appends="YES" id="4p4-l4-qZu"/>
                                 </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3yK-65-bIQ">
+                                <rect key="frame" x="108" y="313" width="104" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="採点結果">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="nbb-t4-By2" kind="modal" id="bpw-rf-uE9"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EMs-sN-Jr4">
                                 <rect key="frame" x="61" y="370" width="199" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -127,31 +166,11 @@
                                     <action selector="pushRecord:" destination="l8p-hu-nh0" eventType="touchUpInside" id="H64-2O-ejJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3yK-65-bIQ">
-                                <rect key="frame" x="108" y="313" width="104" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="採点結果">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pushStop:" destination="l8p-hu-nh0" eventType="touchUpInside" id="mlD-rK-76Z"/>
-                                    <segue destination="nbb-t4-By2" kind="modal" id="bpw-rf-uE9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="apJ-jS-zZk">
-                                <rect key="frame" x="145" y="414" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="play"/>
-                                <connections>
-                                    <action selector="tapPlay:" destination="l8p-hu-nh0" eventType="touchUpInside" id="w3K-nQ-KSZ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="kekka" destination="3yK-65-bIQ" id="zyi-rY-pTR"/>
                         <outlet property="object" destination="6WU-Vf-xx7" id="3eu-JQ-6nC"/>
                         <outlet property="recordButton" destination="EMs-sN-Jr4" id="2ob-SU-MAd"/>
                         <outlet property="stopButton" destination="3yK-65-bIQ" id="Jfh-UK-6TT"/>
@@ -165,7 +184,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="242" y="355"/>
+            <point key="canvasLocation" x="242" y="346"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="5cP-NV-fcC">
