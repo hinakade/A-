@@ -157,13 +157,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EMs-sN-Jr4">
-                                <rect key="frame" x="61" y="370" width="199" height="45"/>
+                                <rect key="frame" x="61" y="351" width="199" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="叫ぶ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="pushRecord:" destination="l8p-hu-nh0" eventType="touchUpInside" id="H64-2O-ejJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="erc-Un-zmL">
+                                <rect key="frame" x="130" y="441" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="りせっと"/>
+                                <connections>
+                                    <action selector="tapReset:" destination="l8p-hu-nh0" eventType="touchUpInside" id="DvR-1h-k8G"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -173,6 +181,7 @@
                     <connections>
                         <outlet property="object" destination="6WU-Vf-xx7" id="3eu-JQ-6nC"/>
                         <outlet property="recordButton" destination="EMs-sN-Jr4" id="2ob-SU-MAd"/>
+                        <outlet property="resetBtn" destination="erc-Un-zmL" id="h0Q-KY-pFk"/>
                         <outlet property="stopButton" destination="3yK-65-bIQ" id="Jfh-UK-6TT"/>
                     </connections>
                 </viewController>

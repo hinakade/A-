@@ -16,11 +16,11 @@ class _02ViewController: UIViewController{
     @IBOutlet weak var object: UIImageView!
     @IBOutlet weak var kekka: UIButton!
     
+    @IBOutlet weak var resetBtn: UIButton!
     var recorder: AVAudioRecorder!
     var meterTimer: NSTimer!
     var audioPlayer:AVAudioPlayer!
     var picture = false
-
     
     
     
@@ -28,6 +28,7 @@ class _02ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        resetBtn.hidden = true
         
         // 背景画像01
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -86,6 +87,29 @@ class _02ViewController: UIViewController{
                        },
             completion: { finished in
                 self.stopButton.hidden = false
+                
+                
+                //前の状態
+                    self.stopButton.hidden = false
+                self.recordButton.hidden = true
+                self.stopButton.enabled = true
+//                self.recordButton.setTitle("叫ぶ", forState:.Normal)
+                self.resetBtn.hidden = false
+                self.resetBtn.hidden = true
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                //self.recordButton.hidden = true
             })
     //音再生
 //    if(self.picture == false){
@@ -143,8 +167,10 @@ class _02ViewController: UIViewController{
             print("stop")
             self.recorder.stop()
             self.meterTimer.invalidate()
-            
-            self.recordButton.setTitle("終了", forState:.Normal)
+            //りせっとぼたんを表示
+            resetBtn.hidden = false
+            stopButton.hidden = false
+            //self.recordButton.setTitle("叫び直し", forState:.Normal)
             let session:AVAudioSession = AVAudioSession.sharedInstance()
             var error: NSError?
             do {
@@ -169,6 +195,7 @@ class _02ViewController: UIViewController{
 //            
             
         }
+        
         
     
         
@@ -219,6 +246,24 @@ class _02ViewController: UIViewController{
     
     
    ////////////////////////////////////////////////////////////////////////////////////
+    //resetぼたん
+    
+    @IBAction func tapReset(sender: AnyObject) {
+        
+        stopButton.hidden = true
+        recordButton.hidden = false
+        stopButton.enabled = false
+        self.recordButton.setTitle("叫ぶ", forState:.Normal)
+        resetBtn.hidden = true
+        
+        self.object.frame = CGRectMake(86, 152, 149, 128)
+        self.object.hidden = false
+        object.image = UIImage(named: "")
+        
+    }
+    
+    
+    
     
     func recordWithPermission(setup:Bool) {
         let session:AVAudioSession = AVAudioSession.sharedInstance()
@@ -322,10 +367,14 @@ class _02ViewController: UIViewController{
             
             let apc = String(format:"Avg:%@", apc0.description)
 //            apcLabel.text = apc
+            
         }
+        
     }
     
 //終わり
+
+    
     
 
 }
