@@ -72,6 +72,19 @@ class ThirdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // 背景画像01
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "finalview.jpg")?.drawInRect(self.view.bounds)
+        
+        let image: UIImage! = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        
+        self.view.backgroundColor = UIColor(patternImage: image)
+
     }
     
     override func didReceiveMemoryWarning() {

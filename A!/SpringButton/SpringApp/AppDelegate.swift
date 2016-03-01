@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  A!
+//  SpringApp
 //
-//  Created by KadeHina on 2016/02/15.
-//  Copyright © 2016年 KadeHina. All rights reserved.
+//  Created by Meng To on 2015-01-06.
+//  Copyright (c) 2015 Meng To. All rights reserved.
 //
 
 import UIKit
@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
- 
+        
+        
         return true
     }
 
