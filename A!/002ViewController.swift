@@ -23,12 +23,12 @@ class _02ViewController: UIViewController{
     var picture = false
     
     
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+    
+        object.hidden = true
         resetBtn.hidden = true
         self.object.layer.masksToBounds = true
         
@@ -38,6 +38,7 @@ class _02ViewController: UIViewController{
         // 背景画像01の設定
         var backView: [String] = ["yama.jpg","火山.jpg"]
 
+        
         UIGraphicsBeginImageContext(self.view.frame.size)
          var randomInt = Int(arc4random_uniform(UInt32(backView.count)))
         UIImage(named: backView[randomInt])?.drawInRect(self.view.bounds)
@@ -46,24 +47,21 @@ class _02ViewController: UIViewController{
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
         
+
         
-        
-        
-        self.stopButton.enabled = false
+       self.stopButton.enabled = false
        self.stopButton.hidden = true
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    @IBOutlet weak var playTap: UIButton!
-    
     
     //写真のアニメーション
     @IBAction func swpimg(sender: UISwipeGestureRecognizer) {
         
         //録音再生
-        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask,true)
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask,true)
         var docsDir: AnyObject = dirPaths[0]
         var soundFilePath = docsDir.stringByAppendingPathComponent("Recorded.m4a")
         let soundFileURL = NSURL(fileURLWithPath: soundFilePath)
@@ -85,19 +83,10 @@ class _02ViewController: UIViewController{
         //アニメーション動く
         UIView.animateWithDuration(1, animations: { () -> Void in
             self.object.frame = CGRectMake(170, 0, 0, 0);
-    
             self.picture = false
                        },
             completion: { finished in
                 self.stopButton.hidden = false
-//                TODO:分からない あにめーしょんを下に降ろすをどう書いたら良いのか分からない。
-                
-//                object.animationDuration = "fadeinDown"
-//                object.curve = "easeIn"
-//                object.duration = 1.0
-//                self.object.animationImages!
-                
-                
                 
                 //前の状態 強制的に採点結果に移動させる。
                 self.stopButton.hidden = false
@@ -151,6 +140,7 @@ class _02ViewController: UIViewController{
             print("鳥写真表示")
             object.image = UIImage(named: "Myapp.jpg")
             
+            
             //録音終了
             print("stop")
             self.recorder.stop()
@@ -174,7 +164,7 @@ class _02ViewController: UIViewController{
             self.stopButton.enabled = false
             
         }else{
-            
+            object.hidden = false
             object.image = UIImage(named: "")
             self.recordButton.setTitle("叫び終わり", forState:.Normal)
             self.stopButton.enabled = true
