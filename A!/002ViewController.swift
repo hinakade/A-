@@ -239,9 +239,6 @@ class _02ViewController: UIViewController{
         
     }
     
-    
-    
-    
     func recordWithPermission(setup:Bool) {
         let session:AVAudioSession = AVAudioSession.sharedInstance()
         // ios 8 and later

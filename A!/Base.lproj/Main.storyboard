@@ -114,7 +114,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="242" y="346"/>
+            <point key="canvasLocation" x="242" y="355"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="5cP-NV-fcC">
@@ -139,6 +139,7 @@ CDgw54K5A
                                 <state key="normal" title="タイトルに戻る"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="pop"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="Tf5-ca-F9r" kind="modal" id="bpb-MQ-bEV"/>
@@ -156,6 +157,7 @@ CDgw54K5A
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="backTitleBtn" destination="1Nu-5y-R3f" id="HTm-f0-VyK"/>
                         <outlet property="comment" destination="5Fz-3f-URM" id="LUf-UQ-5Uo"/>
                         <outlet property="point" destination="IFa-9z-zbf" id="mdw-E6-9gu"/>
                     </connections>
