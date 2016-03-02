@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import SpriteKit
+
 
 class _02ViewController: UIViewController{
     
@@ -51,6 +53,43 @@ class _02ViewController: UIViewController{
         
        self.stopButton.enabled = false
        self.stopButton.hidden = true
+        
+        
+        
+        //2Dパーティクル使う
+//        var myFire = SKEmitterNode(fileNamed: "frower.sks")
+//        myFire!.position = CGPoint(x: 400, y: 800)
+//        self.addchild(myFire)
+//        
+//        myFire?.position = CGPoint(x: 0, y: 0)
+        
+        
+        
+        
+        
+        ////////////////////////////////////
+        
+        class GameScene: SKScene {
+            /** 画面が表示された時に実行される */
+            override func didMoveToView(view: SKView) {
+            }
+            
+            /** フレーム毎に実行される */
+            override func update(currentTime: CFTimeInterval) {
+            }
+            
+            /** 画面をタッチしたときに実行される */
+             func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+                for touch: AnyObject in touches {
+                    // タッチされた位置を取得
+                    let location = touch.locationInNode(self)
+                }
+            }
+        }
+
+        
+        ////////////////////////////////////
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -344,7 +383,11 @@ class _02ViewController: UIViewController{
             
         }
         
+    
+        
     }
+    
+
     
 //終わり
 //飛ばす画像の角を丸くるする
