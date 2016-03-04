@@ -7,13 +7,19 @@
 //
 
 import UIKit
-    import SpriteKit
+import SpriteKit
+//AVFoundationを追加
+import AVFoundation
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController,AVAudioPlayerDelegate {
 
     @IBOutlet weak var startBtn: SpringButton!
     
 
+    @IBAction func BtnTap(sender: UIButton) {
+        print("ボタンタップ")
+        soundPlay()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +37,22 @@ class FirstViewController: UIViewController {
 
     
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+    }
 
+    func soundPlay() {
+        let sound_data = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("recorder", ofType: "mp3")!)
+        print(sound_data)
+        do {
+            var audioPlayer: AVAudioPlayer = try AVAudioPlayer(contentsOfURL: sound_data)
+            audioPlayer.play()
+        }catch let error as NSError{
+            print("error")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

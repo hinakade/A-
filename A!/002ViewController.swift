@@ -69,6 +69,8 @@ class _02ViewController: UIViewController{
         
         ////////////////////////////////////
         
+        //他の方法 2Dパーティクル表示方法
+        
         class GameScene: SKScene {
             /** 画面が表示された時に実行される */
             override func didMoveToView(view: SKView) {
@@ -261,7 +263,7 @@ class _02ViewController: UIViewController{
     
     
     
-   ////////////////////////////////////////////////////////////////////////////////////
+   ////////////////////////////////////////////////////////////////
     //resetぼたん
     
     @IBAction func tapReset(sender: AnyObject) {

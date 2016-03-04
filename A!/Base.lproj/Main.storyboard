@@ -32,6 +32,14 @@
                                     <segue destination="l8p-hu-nh0" kind="modal" id="xEK-b8-QSD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B66-7l-xtf">
+                                <rect key="frame" x="143" y="322" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="BtnTap:" destination="Tf5-ca-F9r" eventType="touchUpInside" id="2L7-U4-Nq0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
