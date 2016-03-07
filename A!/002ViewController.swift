@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 import SpriteKit
-
+import iAd
 
 class _02ViewController: UIViewController{
     
@@ -17,6 +17,7 @@ class _02ViewController: UIViewController{
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var object: UIImageView!
     @IBOutlet weak var kekka: UIButton!
+        @IBOutlet weak var myiAdBanner: ADBannerView!
     
     @IBOutlet weak var resetBtn: UIButton!
     var recorder: AVAudioRecorder!
@@ -29,6 +30,7 @@ class _02ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     
         object.hidden = true
         resetBtn.hidden = true
@@ -88,9 +90,13 @@ class _02ViewController: UIViewController{
                 }
             }
         }
-
-        
         ////////////////////////////////////
+        
+        //iAd
+        self.canDisplayBannerAds = true
+        self.myiAdBanner.hidden = true
+        //
+        
         
     }
     
@@ -134,7 +140,6 @@ class _02ViewController: UIViewController{
                 self.recordButton.hidden = true
                 self.stopButton.enabled = true
 //                self.recordButton.setTitle("叫ぶ", forState:.Normal)
-                self.resetBtn.hidden = false
                 self.resetBtn.hidden = true
                 
             })
@@ -188,7 +193,7 @@ class _02ViewController: UIViewController{
             self.meterTimer.invalidate()
             //りせっとぼたんを表示
             resetBtn.hidden = false
-            stopButton.hidden = false
+            stopButton.hidden = true
             //self.recordButton.setTitle("叫び直し", forState:.Normal)
             let session:AVAudioSession = AVAudioSession.sharedInstance()
             var error: NSError?
@@ -211,6 +216,7 @@ class _02ViewController: UIViewController{
             self.stopButton.enabled = true
 //            録音
             self.recordWithPermission(true)
+            self.resetBtn.hidden = true
             
         }
         

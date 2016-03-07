@@ -10,7 +10,7 @@ import SpriteKit
 //AVFoundationを追加
 import AVFoundation
 
-class FirstViewController: UIViewController,AVAudioPlayerDelegate,UIViewControllerTransitioningDelegate {
+class FirstViewController: UIViewController,AVAudioPlayerDelegate {
 
 @IBOutlet weak var startBtn: SpringButton!
      var audioPlayer: AVAudioPlayer!
@@ -18,11 +18,6 @@ class FirstViewController: UIViewController,AVAudioPlayerDelegate,UIViewControll
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        var viewController: MenuViewController = MenuViewController()
-        viewController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical // ★ここを適当な値にすればいけると思ってた
-        self.presentViewController(viewController, animated: true, completion: nil)
 
         // 背景画像01
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -55,14 +50,6 @@ class FirstViewController: UIViewController,AVAudioPlayerDelegate,UIViewControll
     audioPlayer.play()
         
     }
-    
-    // ページを閉じるときに呼ばれます
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        animationController.isClose = true
-        return animationController
-    }
-}
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
