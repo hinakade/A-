@@ -26,6 +26,11 @@ class ThirdViewController: UIViewController {
         print(voice[r])
         point.text = voice[r]
         comment.text = say[y]
+        comment.font = UIFont.systemFontOfSize(15)
+        //common.表示をセンターにする。
+        point.textAlignment = NSTextAlignment.Center
+        comment.textAlignment = NSTextAlignment.Center
+        
         }
     
     override func viewDidLoad() {
@@ -38,7 +43,8 @@ class ThirdViewController: UIViewController {
         
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        
+    
+    
         
     }
     override func didReceiveMemoryWarning() {

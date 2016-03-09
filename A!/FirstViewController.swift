@@ -28,7 +28,9 @@ class FirstViewController: UIViewController,AVAudioPlayerDelegate {
         UIGraphicsEndImageContext()
         
         
+        
         self.view.backgroundColor = UIColor(patternImage: image)
+        
         
         //音声
         

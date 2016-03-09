@@ -25,13 +25,16 @@ class _02ViewController: UIViewController{
     var audioPlayer:AVAudioPlayer!
     var picture = false
     
-    
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    
+        
+        //buttonのデザイン
+        stopButton.layer.cornerRadius = 5
+        recordButton.layer.cornerRadius = 5
+        object.layer.cornerRadius = 5
+        //button fin
         object.hidden = true
         resetBtn.hidden = true
         self.object.layer.masksToBounds = true
@@ -41,6 +44,10 @@ class _02ViewController: UIViewController{
         
         // 背景画像01の設定
         var backView: [String] = ["yama.jpg","火山.jpg"]
+        
+        //角を丸く、枠に色をつける
+        
+   
 
         
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -50,54 +57,14 @@ class _02ViewController: UIViewController{
         
         UIGraphicsEndImageContext()
         self.view.backgroundColor = UIColor(patternImage: image)
-        
-
-        
+       
        self.stopButton.enabled = false
        self.stopButton.hidden = true
-        
-        
-        
-        //2Dパーティクル使う
-//        var myFire = SKEmitterNode(fileNamed: "frower.sks")
-//        myFire!.position = CGPoint(x: 400, y: 800)
-//        self.addchild(myFire)
-//        
-//        myFire?.position = CGPoint(x: 0, y: 0)
-        
-        
-        
-        
-        
-        ////////////////////////////////////
-        
-        //他の方法 2Dパーティクル表示方法
-        
-        class GameScene: SKScene {
-            /** 画面が表示された時に実行される */
-            override func didMoveToView(view: SKView) {
-            }
-            
-            /** フレーム毎に実行される */
-            override func update(currentTime: CFTimeInterval) {
-            }
-            
-            /** 画面をタッチしたときに実行される */
-             func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-                for touch: AnyObject in touches {
-                    // タッチされた位置を取得
-                    let location = touch.locationInNode(self)
-                }
-            }
-        }
-        ////////////////////////////////////
         
         //iAd
         self.canDisplayBannerAds = true
         self.myiAdBanner.hidden = true
         //
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -115,6 +82,7 @@ class _02ViewController: UIViewController{
         
         var audioError:NSError!
         
+        
         do{
             self.audioPlayer = try AVAudioPlayer(contentsOfURL: soundFileURL)
         } catch var error1 as NSError {
@@ -131,6 +99,7 @@ class _02ViewController: UIViewController{
         UIView.animateWithDuration(1, animations: { () -> Void in
             self.object.frame = CGRectMake(170, 0, 0, 0);
             self.picture = false
+            
                        },
             completion: { finished in
                 self.stopButton.hidden = false
@@ -141,12 +110,8 @@ class _02ViewController: UIViewController{
                 self.stopButton.enabled = true
 //                self.recordButton.setTitle("叫ぶ", forState:.Normal)
                 self.resetBtn.hidden = true
-                
             })
     }
-    
-    
-    
 //////////////////////////////////////////////////////////////////////
    
     @IBAction func tapPlay(sender: AnyObject) {
@@ -167,26 +132,19 @@ class _02ViewController: UIViewController{
             
             self.audioPlayer = nil
         }
-        
-        
         audioPlayer.prepareToPlay()
         audioPlayer.play()
-        
     }
-    //////////////////////////////////////////////////////////////////////
-    
-    
-    
-    
+    /////////////////////////////////////////////////////////
     @IBAction func pushRecord(sender: AnyObject) {
        
         
         //画像表示
         if  self.stopButton.enabled == true{
             print("鳥写真表示")
+           
             object.image = UIImage(named: "Myapp.jpg")
-            
-            
+           
             //録音終了
             print("stop")
             self.recorder.stop()
@@ -194,9 +152,11 @@ class _02ViewController: UIViewController{
             //りせっとぼたんを表示
             resetBtn.hidden = false
             stopButton.hidden = true
+            recordButton.hidden = true
             //self.recordButton.setTitle("叫び直し", forState:.Normal)
             let session:AVAudioSession = AVAudioSession.sharedInstance()
             var error: NSError?
+        
             do {
                 try session.setActive(false)
             } catch let error1 as NSError {
@@ -217,59 +177,10 @@ class _02ViewController: UIViewController{
 //            録音
             self.recordWithPermission(true)
             self.resetBtn.hidden = true
-            
         }
-        
-        
-    
-        
-        //録音
-        
-//        if recorder != nil && recorder.recording {
-//            self.recorder.pause()
-//            self.recordButton.setTitle("もう一度叫ぶ？", forState:.Normal)
-//            print("こんてにゅー")
-//            
-////        } else {
-//            
-
 
     }
     
-    //録音止める
-//    @IBAction func pushStop(sender: UIButton) {
-//        
-//        
-//        if recorder == nil {
-//            return
-//        }
-//        
-//        print("stop")
-//        self.recorder.stop()
-//        self.meterTimer.invalidate()
-//        
-//        self.recordButton.setTitle("終了", forState:.Normal)
-//        let session:AVAudioSession = AVAudioSession.sharedInstance()
-//        var error: NSError?
-//        do {
-//            try session.setActive(false)
-//        } catch let error1 as NSError {
-//            error = error1
-//            print("could not make session inactive")
-//            if let e = error {
-//                print(e.localizedDescription)
-//                return
-//            }
-//        }
-//        self.stopButton.enabled = false
-//        self.recordButton.enabled = true
-//    }
-//    
-   
-    
-    
-    
-   ////////////////////////////////////////////////////////////////
     //resetぼたん
     
     @IBAction func tapReset(sender: AnyObject) {
@@ -342,7 +253,6 @@ class _02ViewController: UIViewController{
 //            self.recorder.delegate = self
             self.recorder.meteringEnabled = true
             self.recorder.prepareToRecord() // creates/overwrites the file at soundFileURL
-            
         }
     } //setupRecorde終わり
     
@@ -390,12 +300,7 @@ class _02ViewController: UIViewController{
 //            apcLabel.text = apc
             
         }
-        
-    
-        
     }
-    
-
     
 //終わり
 //飛ばす画像の角を丸くるする
