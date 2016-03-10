@@ -11,13 +11,41 @@ import SpriteKit
 import AVFoundation
 
 class FirstViewController: UIViewController,AVAudioPlayerDelegate {
+    
+    
+    //音声クラス宣言
+    var myAudioPlayer : AVAudioPlayer!
+    var myButton : UIButton!
 
+    
 @IBOutlet weak var startBtn: SpringButton!
      var audioPlayer: AVAudioPlayer!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //音声流す
+        
+        //再生する音源のURLを生成.
+        let soundFilePath : NSString = NSBundle.mainBundle().pathForResource("recorder", ofType: "mp3")!
+        let fileURL : NSURL = NSURL(fileURLWithPath: soundFilePath as String)
+        
+        //AVAudioPlayerのインスタンス化.
+        myAudioPlayer = try!(AVAudioPlayer(contentsOfURL: fileURL, fileTypeHint: nil))
+        
+        //AVAudioPlayerのデリゲートをセット.
+        myAudioPlayer.delegate = self
+        
+        myAudioPlayer.play()
+        
+        
+        
+        //音声終わり
+        
+        
+        
 
         // 背景画像01
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -38,20 +66,30 @@ class FirstViewController: UIViewController,AVAudioPlayerDelegate {
         let sound_data = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("recorder", ofType: "mp3")!)
         print(sound_data)
         do {
-            var audioPlayer: AVAudioPlayer = try AVAudioPlayer(contentsOfURL: sound_data)
-            audioPlayer = try AVAudioPlayer(contentsOfURL: sound_data)
-            audioPlayer.delegate = self
-            audioPlayer.prepareToPlay()
-            audioPlayer.play()
+            myAudioPlayer = try AVAudioPlayer(contentsOfURL: sound_data)
+            myAudioPlayer = try AVAudioPlayer(contentsOfURL: sound_data)
+            myAudioPlayer.delegate = self
+            myAudioPlayer.prepareToPlay()
+            myAudioPlayer.play()
         }catch let error as NSError{
             print("error")
         }
     }
     
     func soundPlay() {
-    audioPlayer.play()
+        myAudioPlayer.play()
         
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        //音楽を止める
+          myAudioPlayer.stop()
+        //音楽を止める
+      
+    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
