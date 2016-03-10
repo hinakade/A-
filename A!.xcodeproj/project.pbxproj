@@ -33,6 +33,7 @@
 		276BDB271C8810F000ADEA9A /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 276BDB111C8810F000ADEA9A /* iTunesArtwork@2x.png */; };
 		276BDB281C8810F000ADEA9A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 276BDB121C8810F000ADEA9A /* README.md */; };
 		276BDB2A1C88247800ADEA9A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276BDB291C88247800ADEA9A /* AVFoundation.framework */; };
+		278A3AAE1C9146B1005A16B1 /* btnstart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 278A3AAD1C9146B1005A16B1 /* btnstart.mp3 */; };
 		2792594B1C719F9200855E43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2792594A1C719F9200855E43 /* AppDelegate.swift */; };
 		279259501C719F9200855E43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2792594E1C719F9200855E43 /* Main.storyboard */; };
 		279259521C719F9200855E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 279259511C719F9200855E43 /* Assets.xcassets */; };
@@ -107,6 +108,7 @@
 		276BDB111C8810F000ADEA9A /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		276BDB121C8810F000ADEA9A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		276BDB291C88247800ADEA9A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		278A3AAD1C9146B1005A16B1 /* btnstart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = btnstart.mp3; sourceTree = "<group>"; };
 		279259471C719F9200855E43 /* A!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2792594A1C719F9200855E43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2792594F1C719F9200855E43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				27C5ECFB1C85664D00CF1FC3 /* Spring */,
 				27F290F51C85642F00E03836 /* first_backview.jpg */,
 				27E57C821C81EF7E0041AB3E /* 山.mov */,
+				278A3AAD1C9146B1005A16B1 /* btnstart.mp3 */,
 				274AB4461C7FFF1900802C30 /* recorder.mp3 */,
 				27E57C841C81F4170041AB3E /* yama.jpg */,
 				276ADD021C82A8060064E2C0 /* Myapp.jpg */,
@@ -353,6 +356,7 @@
 				276BDB1F1C8810F000ADEA9A /* Icon-60.png in Resources */,
 				279259551C719F9200855E43 /* LaunchScreen.storyboard in Resources */,
 				276BDB1B1C8810F000ADEA9A /* Icon-83.5@2x.png in Resources */,
+				278A3AAE1C9146B1005A16B1 /* btnstart.mp3 in Resources */,
 				276ADD031C82A8060064E2C0 /* Myapp.jpg in Resources */,
 				276BDB131C8810F000ADEA9A /* Contents.json in Resources */,
 				276BDB261C8810F000ADEA9A /* iTunesArtwork.png in Resources */,

@@ -16,12 +16,12 @@ class FirstViewController: UIViewController,AVAudioPlayerDelegate {
     //音声クラス宣言
     var myAudioPlayer : AVAudioPlayer!
     var myButton : UIButton!
-
     
-@IBOutlet weak var startBtn: SpringButton!
-     var audioPlayer: AVAudioPlayer!
     
-
+    @IBOutlet weak var startBtn: SpringButton!
+    var audioPlayer: AVAudioPlayer!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,7 +46,7 @@ class FirstViewController: UIViewController,AVAudioPlayerDelegate {
         
         
         
-
+        
         // 背景画像01
         UIGraphicsBeginImageContext(self.view.frame.size)
         UIImage(named: "first_backview.jpg")?.drawInRect(self.view.bounds)
@@ -84,10 +84,11 @@ class FirstViewController: UIViewController,AVAudioPlayerDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         //音楽を止める
-          myAudioPlayer.stop()
+        myAudioPlayer.stop()
         //音楽を止める
-      
+        
     }
+    
     
     
     
@@ -95,5 +96,5 @@ class FirstViewController: UIViewController,AVAudioPlayerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
