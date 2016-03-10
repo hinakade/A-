@@ -33,7 +33,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="animation" value="pop"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="l8p-hu-nh0" kind="show" id="vOo-FT-v6K"/>
+                                    <action selector="startBtnTap:" destination="Tf5-ca-F9r" eventType="touchUpInside" id="f63-kX-NlE"/>
+                                    <segue destination="l8p-hu-nh0" kind="show" id="HMh-YF-y1I"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -60,20 +60,7 @@ class FirstViewController: UIViewController,AVAudioPlayerDelegate {
         self.view.backgroundColor = UIColor(patternImage: image)
         
         
-        //音声
-        
-        
-        let sound_data = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("recorder", ofType: "mp3")!)
-        print(sound_data)
-        do {
-            myAudioPlayer = try AVAudioPlayer(contentsOfURL: sound_data)
-            myAudioPlayer = try AVAudioPlayer(contentsOfURL: sound_data)
-            myAudioPlayer.delegate = self
-            myAudioPlayer.prepareToPlay()
-            myAudioPlayer.play()
-        }catch let error as NSError{
-            print("error")
-        }
+
     }
     
     func soundPlay() {
@@ -84,12 +71,26 @@ class FirstViewController: UIViewController,AVAudioPlayerDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         //音楽を止める
-        myAudioPlayer.stop()
+        //myAudioPlayer.stop()
         //音楽を止める
         
     }
     
-    
+
+    @IBAction func startBtnTap(sender: AnyObject) {
+        //再生する音源のURLを生成.
+        let soundFilePath : NSString = NSBundle.mainBundle().pathForResource("btnstart", ofType: "mp3")!
+        let fileURL : NSURL = NSURL(fileURLWithPath: soundFilePath as String)
+        
+        //AVAudioPlayerのインスタンス化.
+        myAudioPlayer = try!(AVAudioPlayer(contentsOfURL: fileURL, fileTypeHint: nil))
+        
+        //AVAudioPlayerのデリゲートをセット.
+        myAudioPlayer.delegate = self
+        
+        myAudioPlayer.play()
+        print("ボタンタップ")
+    }
     
     
     override func didReceiveMemoryWarning() {
