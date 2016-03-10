@@ -38,6 +38,7 @@
 		279259501C719F9200855E43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2792594E1C719F9200855E43 /* Main.storyboard */; };
 		279259521C719F9200855E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 279259511C719F9200855E43 /* Assets.xcassets */; };
 		279259551C719F9200855E43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279259531C719F9200855E43 /* LaunchScreen.storyboard */; };
+		279573FA1C91539D0031639E /* backbtn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 279573F91C91539D0031639E /* backbtn.jpg */; };
 		27A3DE4E1C7AE16B005CCDA7 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3DE4D1C7AE16B005CCDA7 /* ThirdViewController.swift */; };
 		27C5ED1A1C85664D00CF1FC3 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C5ECFC1C85664D00CF1FC3 /* AsyncButton.swift */; };
 		27C5ED1B1C85664D00CF1FC3 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C5ECFD1C85664D00CF1FC3 /* AsyncImageView.swift */; };
@@ -115,6 +116,7 @@
 		279259511C719F9200855E43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		279259541C719F9200855E43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		279259561C719F9200855E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		279573F91C91539D0031639E /* backbtn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backbtn.jpg; sourceTree = "<group>"; };
 		27A3DE4D1C7AE16B005CCDA7 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		27C5ECFC1C85664D00CF1FC3 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		27C5ECFD1C85664D00CF1FC3 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				27C5ECFB1C85664D00CF1FC3 /* Spring */,
 				27F290F51C85642F00E03836 /* first_backview.jpg */,
 				27E57C821C81EF7E0041AB3E /* 山.mov */,
+				279573F91C91539D0031639E /* backbtn.jpg */,
 				278A3AAD1C9146B1005A16B1 /* btnstart.mp3 */,
 				274AB4461C7FFF1900802C30 /* recorder.mp3 */,
 				27E57C841C81F4170041AB3E /* yama.jpg */,
@@ -383,6 +386,7 @@
 				276BDB161C8810F000ADEA9A /* Icon-40@3x.png in Resources */,
 				27C5ED421C858CC000CF1FC3 /* frower.sks in Resources */,
 				27C5ED291C85664D00CF1FC3 /* LoadingView.xib in Resources */,
+				279573FA1C91539D0031639E /* backbtn.jpg in Resources */,
 				276BDB171C8810F000ADEA9A /* Icon-60@2x.png in Resources */,
 				276BDB151C8810F000ADEA9A /* Icon-40@2x.png in Resources */,
 				279259501C719F9200855E43 /* Main.storyboard in Resources */,
