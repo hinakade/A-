@@ -98,6 +98,7 @@ class _02ViewController: UIViewController{
         //アニメーション動く
         UIView.animateWithDuration(1, animations: { () -> Void in
             self.object.frame = CGRectMake(170, 0, 0, 0);
+            self.object.frame = CGRectMake(170, 50, 0, 20);
             self.picture = false
             
                        },
