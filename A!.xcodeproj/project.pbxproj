@@ -40,6 +40,8 @@
 		279259551C719F9200855E43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279259531C719F9200855E43 /* LaunchScreen.storyboard */; };
 		279573FA1C91539D0031639E /* backbtn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 279573F91C91539D0031639E /* backbtn.jpg */; };
 		27A3DE4E1C7AE16B005CCDA7 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3DE4D1C7AE16B005CCDA7 /* ThirdViewController.swift */; };
+		27ABBC841C939F9900566203 /* omakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ABBC831C939F9900566203 /* omakeViewController.swift */; };
+		27ABBC861C94051500566203 /* textcomitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ABBC851C94051500566203 /* textcomitViewController.swift */; };
 		27C5ED1A1C85664D00CF1FC3 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C5ECFC1C85664D00CF1FC3 /* AsyncButton.swift */; };
 		27C5ED1B1C85664D00CF1FC3 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C5ECFD1C85664D00CF1FC3 /* AsyncImageView.swift */; };
 		27C5ED1C1C85664D00CF1FC3 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C5ECFE1C85664D00CF1FC3 /* AutoTextView.swift */; };
@@ -118,6 +120,8 @@
 		279259561C719F9200855E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		279573F91C91539D0031639E /* backbtn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backbtn.jpg; sourceTree = "<group>"; };
 		27A3DE4D1C7AE16B005CCDA7 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		27ABBC831C939F9900566203 /* omakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = omakeViewController.swift; sourceTree = "<group>"; };
+		27ABBC851C94051500566203 /* textcomitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textcomitViewController.swift; sourceTree = "<group>"; };
 		27C5ECFC1C85664D00CF1FC3 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		27C5ECFD1C85664D00CF1FC3 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		27C5ECFE1C85664D00CF1FC3 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 				27F6A9031C806FF2004EED2C /* customButtonr.swift */,
 				27F290F31C85631500E03836 /* FirstViewController.swift */,
 				2792594E1C719F9200855E43 /* Main.storyboard */,
+				27ABBC831C939F9900566203 /* omakeViewController.swift */,
+				27ABBC851C94051500566203 /* textcomitViewController.swift */,
 				27F6A9051C80AC27004EED2C /* yakei.jpg */,
 				279259511C719F9200855E43 /* Assets.xcassets */,
 				279259531C719F9200855E43 /* LaunchScreen.storyboard */,
@@ -430,6 +436,8 @@
 				27C5ED1C1C85664D00CF1FC3 /* AutoTextView.swift in Sources */,
 				27C5ED231C85664D00CF1FC3 /* DesignableTextView.swift in Sources */,
 				27C5ED2C1C85664D00CF1FC3 /* Spring.swift in Sources */,
+				27ABBC841C939F9900566203 /* omakeViewController.swift in Sources */,
+				27ABBC861C94051500566203 /* textcomitViewController.swift in Sources */,
 				27C5ED2E1C85664D00CF1FC3 /* SpringButton.swift in Sources */,
 				27C5ED361C85664D00CF1FC3 /* UnwindSegue.swift in Sources */,
 				27C5ED201C85664D00CF1FC3 /* DesignableLabel.swift in Sources */,
