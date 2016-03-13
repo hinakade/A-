@@ -20,24 +20,14 @@ class textcomitViewController: UIViewController {
             print("眠い")
             usecomment.text = "１スタートボタンを押す \n 2 叫ぶ /n 3 上にスライド "
         }
-    }
-    
-  
-    
+//            //セグエ
+            if(scSelectedI1ndex == 1){
+            var targetView: AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier( "firstview" )
+            self.presentViewController( targetView as! FirstViewController, animated: true, completion: nil)
+        }
+        }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

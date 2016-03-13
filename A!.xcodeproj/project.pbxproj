@@ -75,7 +75,6 @@
 		27C5ED3A1C856D8400CF1FC3 /* l201004261600.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 27C5ED391C856D8400CF1FC3 /* l201004261600.jpg */; };
 		27C5ED3C1C856E2900CF1FC3 /* 火山.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 27C5ED3B1C856E2900CF1FC3 /* 火山.jpg */; };
 		27C5ED421C858CC000CF1FC3 /* frower.sks in Resources */ = {isa = PBXBuildFile; fileRef = 27C5ED411C858CC000CF1FC3 /* frower.sks */; };
-		27E57C831C81EF7E0041AB3E /* 山.mov in Resources */ = {isa = PBXBuildFile; fileRef = 27E57C821C81EF7E0041AB3E /* 山.mov */; };
 		27E57C851C81F4170041AB3E /* yama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 27E57C841C81F4170041AB3E /* yama.jpg */; };
 		27E5D3F91C75F36E0034AB9D /* tori.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 27E5D3F81C75F36E0034AB9D /* tori.jpg */; };
 		27F290F41C85631500E03836 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F290F31C85631500E03836 /* FirstViewController.swift */; };
@@ -156,7 +155,6 @@
 		27C5ED391C856D8400CF1FC3 /* l201004261600.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = l201004261600.jpg; sourceTree = "<group>"; };
 		27C5ED3B1C856E2900CF1FC3 /* 火山.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "火山.jpg"; sourceTree = "<group>"; };
 		27C5ED411C858CC000CF1FC3 /* frower.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = frower.sks; sourceTree = "<group>"; };
-		27E57C821C81EF7E0041AB3E /* 山.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "山.mov"; sourceTree = "<group>"; };
 		27E57C841C81F4170041AB3E /* yama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yama.jpg; sourceTree = "<group>"; };
 		27E5D3F81C75F36E0034AB9D /* tori.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tori.jpg; sourceTree = "<group>"; };
 		27F290F31C85631500E03836 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 				27C5ED3B1C856E2900CF1FC3 /* 火山.jpg */,
 				27C5ECFB1C85664D00CF1FC3 /* Spring */,
 				27F290F51C85642F00E03836 /* first_backview.jpg */,
-				27E57C821C81EF7E0041AB3E /* 山.mov */,
 				279573F91C91539D0031639E /* backbtn.jpg */,
 				278A3AAD1C9146B1005A16B1 /* btnstart.mp3 */,
 				274AB4461C7FFF1900802C30 /* recorder.mp3 */,
@@ -373,7 +370,6 @@
 				27C5ED3A1C856D8400CF1FC3 /* l201004261600.jpg in Resources */,
 				276BDB191C8810F000ADEA9A /* Icon-76.png in Resources */,
 				276BDB251C8810F000ADEA9A /* Icon@2x.png in Resources */,
-				27E57C831C81EF7E0041AB3E /* 山.mov in Resources */,
 				27E5D3F91C75F36E0034AB9D /* tori.jpg in Resources */,
 				27F290F61C85642F00E03836 /* first_backview.jpg in Resources */,
 				274AB4471C7FFF1900802C30 /* recorder.mp3 in Resources */,

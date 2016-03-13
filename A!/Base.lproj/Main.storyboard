@@ -8,7 +8,7 @@
         <!--First View Controller-->
         <scene sceneID="NLq-cg-Ui4">
             <objects>
-                <viewController definesPresentationContext="YES" modalTransitionStyle="flipHorizontal" id="Tf5-ca-F9r" customClass="FirstViewController" customModule="A_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstview" definesPresentationContext="YES" modalTransitionStyle="flipHorizontal" id="Tf5-ca-F9r" customClass="FirstViewController" customModule="A_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BVX-TM-4Lt"/>
                         <viewControllerLayoutGuide type="bottom" id="ymY-pF-YYB"/>
@@ -61,7 +61,7 @@
         <!--Omake View Controller-->
         <scene sceneID="gjT-8A-Kw7">
             <objects>
-                <viewController id="DUw-Tt-5kd" customClass="omakeViewController" customModule="A_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showback" id="DUw-Tt-5kd" customClass="omakeViewController" customModule="A_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jNO-B8-RHt"/>
                         <viewControllerLayoutGuide type="bottom" id="czF-2S-vbh"/>
@@ -82,7 +82,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="3nn-Sq-xqp" kind="show" identifier="showSecondView" id="j0B-nh-yCX"/>
+                                            <segue destination="3nn-Sq-xqp" kind="show" identifier="showSecondView" id="5uS-Fw-p41"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -105,7 +105,7 @@
         <!--Textcomit View Controller-->
         <scene sceneID="d1q-dl-rbU">
             <objects>
-                <viewController id="3nn-Sq-xqp" customClass="textcomitViewController" customModule="A_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="textcom" id="3nn-Sq-xqp" customClass="textcomitViewController" customModule="A_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5rH-eZ-OWG"/>
                         <viewControllerLayoutGuide type="bottom" id="18q-s9-CXa"/>
@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ra-5s-Cia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="615" y="1241"/>
+            <point key="canvasLocation" x="578" y="1241"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xau-PR-hCP">
