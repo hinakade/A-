@@ -9,6 +9,7 @@ import UIKit
 import SpriteKit
 //AVFoundationを追加
 import AVFoundation
+//import iAd
 
 class FirstViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDelegate {
     
@@ -20,13 +21,17 @@ class FirstViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDe
     
     @IBOutlet weak var startBtn: SpringButton!
     var audioPlayer: AVAudioPlayer!
-    
-    
+
+//    @IBOutlet weak var firstIad: ADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
         
+        // iAd(インタースティシャル)の自動表示
+//        self.interstitialPresentationPolicy = ADInterstitialPresentationPolicy.Automatic
+        //
         
         //音声流す
         
@@ -91,6 +96,24 @@ class FirstViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDe
         myAudioPlayer.play()
         print("ボタンタップ")
     }
+   
+    @IBAction func omake(sender: AnyObject) {
+        //再生する音源のURLを生成.
+        let soundFilePath : NSString = NSBundle.mainBundle().pathForResource("btnstart", ofType: "mp3")!
+        let fileURL : NSURL = NSURL(fileURLWithPath: soundFilePath as String)
+        
+        //AVAudioPlayerのインスタンス化.
+        myAudioPlayer = try!(AVAudioPlayer(contentsOfURL: fileURL, fileTypeHint: nil))
+        
+        //AVAudioPlayerのデリゲートをセット.
+        myAudioPlayer.delegate = self
+        
+        myAudioPlayer.play()
+
+        
+        
+    }
+    
     
     
     

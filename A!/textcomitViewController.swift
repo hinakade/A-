@@ -18,7 +18,7 @@ class textcomitViewController: UIViewController {
         super.viewDidLoad()
         if(scSelectedI1ndex == 0){
             print("眠い")
-            usecomment.text = "１スタートボタンを押す \n 2 叫ぶ /n 3 上にスライド "
+        usecomment.text = "使い方 \n1スタートボタンを押す。\n2 叫びボタンをクリック。\n3 叫ぶ\n4 叫び終わりをクリック\n5 上にスライド\n6 再生後あなたの叫んだ声が聞こえてきます。\n ※音声機能使います。"
             
             // 背景画像01
             UIGraphicsBeginImageContext(self.view.frame.size)
