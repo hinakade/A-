@@ -48,16 +48,16 @@ class FirstViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDe
         
         
 //        // 背景画像01
-//        UIGraphicsBeginImageContext(self.view.frame.size)
-//        UIImage(named: "first_backview.jpg")?.drawInRect(self.view.bounds)
-//        
-//        let image: UIImage! = UIGraphicsGetImageFromCurrentImageContext()
-//        
-//        UIGraphicsEndImageContext()
-//        
-//        
-//        
-//        self.view.backgroundColor = UIColor(patternImage: image)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "first_backview.jpg")?.drawInRect(self.view.bounds)
+        
+        let image: UIImage! = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        
+        
+        self.view.backgroundColor = UIColor(patternImage: image)
         
         
 

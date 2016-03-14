@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--First View Controller-->
@@ -17,8 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHs-Hq-a6s">
+                                <rect key="frame" x="185" y="411" width="45" height="30"/>
+                                <state key="normal" title="おまけ"/>
+                                <connections>
+                                    <segue destination="gdE-zu-TYl" kind="show" id="d5i-qR-0tK"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASS-MC-rv1" customClass="SpringButton" customModule="A_" customModuleProvider="target">
-                                <rect key="frame" x="52" y="194" width="81" height="65"/>
+                                <rect key="frame" x="49" y="243" width="81" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="pf5-tv-FoL"/>
                                     <constraint firstAttribute="width" constant="100" id="urS-dh-A2u"/>
@@ -37,16 +45,15 @@
                                     <segue destination="l8p-hu-nh0" kind="show" id="HMh-YF-y1I"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHs-Hq-a6s">
-                                <rect key="frame" x="116" y="308" width="45" height="30"/>
-                                <state key="normal" title="おまけ"/>
-                                <connections>
-                                    <segue destination="gdE-zu-TYl" kind="show" id="d5i-qR-0tK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.49981255229999999" green="0.57760933690000005" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ASS-MC-rv1" firstAttribute="leading" secondItem="H7p-Nh-TOU" secondAttribute="leadingMargin" constant="41" id="2ju-sU-Crd"/>
+                            <constraint firstItem="uHs-Hq-a6s" firstAttribute="leading" secondItem="H7p-Nh-TOU" secondAttribute="leading" constant="185" id="8Il-4U-NAP"/>
+                            <constraint firstAttribute="trailing" secondItem="uHs-Hq-a6s" secondAttribute="trailing" constant="184" id="DL4-Sx-7tu"/>
+                            <constraint firstItem="ymY-pF-YYB" firstAttribute="top" secondItem="uHs-Hq-a6s" secondAttribute="bottom" constant="295" id="jhA-Xg-Q3g"/>
+                        </constraints>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="415" height="736"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -102,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="101" y="1241"/>
         </scene>
-        <!--Textcomit View Controller-->
+        <!--使い方-->
         <scene sceneID="d1q-dl-rbU">
             <objects>
-                <viewController storyboardIdentifier="textcom" id="3nn-Sq-xqp" customClass="textcomitViewController" customModule="A_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="textcom" title="使い方" id="3nn-Sq-xqp" customClass="textcomitViewController" customModule="A_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5rH-eZ-OWG"/>
                         <viewControllerLayoutGuide type="bottom" id="18q-s9-CXa"/>
@@ -114,14 +121,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="hogehoge" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nHq-1v-YdO">
-                                <rect key="frame" x="78" y="141" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="w7U-wc-XBb">
+                                <rect key="frame" x="87" y="242" width="240" height="128"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="最初に戻る" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nHq-1v-YdO">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w7U-wc-XBb" firstAttribute="centerX" secondItem="OtH-ny-QIe" secondAttribute="centerX" id="bvg-Jm-zjK"/>
+                            <constraint firstItem="w7U-wc-XBb" firstAttribute="centerY" secondItem="OtH-ny-QIe" secondAttribute="centerY" id="vwU-Fa-kNj"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
@@ -165,19 +181,9 @@
                                     <segue destination="nbb-t4-By2" kind="presentation" id="bpw-rf-uE9"/>
                                 </connections>
                             </button>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i5T-Tb-jgg">
-                                <rect key="frame" x="-55" y="670" width="480" height="66"/>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i5T-Tb-jgg">
+                                <rect key="frame" x="-45" y="670" width="480" height="66"/>
                             </adBannerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erc-Un-zmL">
-                                <rect key="frame" x="167" y="533" width="77" height="68"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="りせっと">
-                                    <color key="titleColor" red="1" green="0.98627954943326646" blue="0.9826285981491546" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="tapReset:" destination="l8p-hu-nh0" eventType="touchUpInside" id="DvR-1h-k8G"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMs-sN-Jr4">
                                 <rect key="frame" x="171" y="426" width="73" height="42"/>
                                 <color key="backgroundColor" red="0.81568627449999997" green="0.47843137250000001" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -208,12 +214,23 @@
                                     <outletCollection property="gestureRecognizers" destination="DLu-A4-ig1" appends="YES" id="4p4-l4-qZu"/>
                                 </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erc-Un-zmL">
+                                <rect key="frame" x="169" y="490" width="77" height="52"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="りせっと" backgroundImage="backbtn.jpg">
+                                    <color key="titleColor" red="1" green="0.98627954943326646" blue="0.9826285981491546" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapReset:" destination="l8p-hu-nh0" eventType="touchUpInside" id="DvR-1h-k8G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="i5T-Tb-jgg" firstAttribute="centerX" secondItem="F3F-EV-CqC" secondAttribute="centerX" id="2Pk-wb-Inh"/>
                             <constraint firstItem="i5T-Tb-jgg" firstAttribute="centerY" secondItem="F3F-EV-CqC" secondAttribute="centerY" id="8Ao-H1-vIx"/>
                             <constraint firstItem="EMs-sN-Jr4" firstAttribute="centerY" secondItem="F3F-EV-CqC" secondAttribute="centerY" constant="79" id="DMD-nE-5lY"/>
+                            <constraint firstItem="YgX-qS-4Ux" firstAttribute="top" secondItem="i5T-Tb-jgg" secondAttribute="bottom" id="Dxa-b2-dhX"/>
+                            <constraint firstItem="erc-Un-zmL" firstAttribute="top" secondItem="EMs-sN-Jr4" secondAttribute="bottom" constant="22" id="HNJ-iS-Eza"/>
                             <constraint firstItem="3yK-65-bIQ" firstAttribute="centerY" secondItem="F3F-EV-CqC" secondAttribute="centerY" id="bgT-ww-qzn">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value=""/>
@@ -222,6 +239,7 @@
                             </constraint>
                             <constraint firstItem="EMs-sN-Jr4" firstAttribute="centerX" secondItem="F3F-EV-CqC" secondAttribute="centerX" id="eKN-Pl-phP"/>
                             <constraint firstItem="3yK-65-bIQ" firstAttribute="centerX" secondItem="F3F-EV-CqC" secondAttribute="centerX" id="hVZ-yt-Prt"/>
+                            <constraint firstItem="erc-Un-zmL" firstAttribute="centerX" secondItem="F3F-EV-CqC" secondAttribute="centerX" id="lQb-Ep-wHx"/>
                             <constraint firstItem="3yK-65-bIQ" firstAttribute="centerX" secondItem="F3F-EV-CqC" secondAttribute="centerX" id="ols-n8-IVV"/>
                             <constraint firstItem="6WU-Vf-xx7" firstAttribute="centerX" secondItem="F3F-EV-CqC" secondAttribute="centerX" id="xQf-In-zyI"/>
                         </constraints>
@@ -244,7 +262,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-49" y="426"/>
+            <point key="canvasLocation" x="-36" y="426"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="5cP-NV-fcC">
@@ -258,10 +276,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JNc-vT-W1r">
-                                <rect key="frame" x="37" y="535" width="320" height="50"/>
-                            </adBannerView>
-                            <textField autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IFa-9z-zbf">
+                            <textField autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IFa-9z-zbf">
                                 <rect key="frame" x="0.0" y="165" width="414" height="30"/>
                                 <string key="text" base64-UTF8="YES">
 CDgw54K5A
@@ -270,8 +285,8 @@ CDgw54K5A
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="いい叫びっぷりですね！" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fz-3f-URM">
-                                <rect key="frame" x="37" y="260" width="340" height="52"/>
+                            <textView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="いい叫びっぷりですね！" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fz-3f-URM">
+                                <rect key="frame" x="37" y="273" width="340" height="52"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -281,8 +296,8 @@ CDgw54K5A
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Nu-5y-R3f" customClass="SpringButton" customModule="A_" customModuleProvider="target">
-                                <rect key="frame" x="137" y="474" width="141" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Nu-5y-R3f" customClass="SpringButton" customModule="A_" customModuleProvider="target">
+                                <rect key="frame" x="137" y="405" width="141" height="30"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
@@ -301,17 +316,19 @@ CDgw54K5A
                                     <segue destination="Tf5-ca-F9r" kind="presentation" id="bpb-MQ-bEV"/>
                                 </connections>
                             </button>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JNc-vT-W1r">
+                                <rect key="frame" x="47" y="686" width="320" height="50"/>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5Fz-3f-URM" firstAttribute="top" secondItem="d9Q-km-BpE" secondAttribute="top" constant="260" id="0Wa-4G-IwJ"/>
-                            <constraint firstItem="5Fz-3f-URM" firstAttribute="centerX" secondItem="IFa-9z-zbf" secondAttribute="centerX" id="KeD-J9-6mK"/>
-                            <constraint firstItem="JNc-vT-W1r" firstAttribute="top" secondItem="5Fz-3f-URM" secondAttribute="bottom" constant="64" id="Wmt-pa-H1H"/>
+                            <constraint firstItem="5Fz-3f-URM" firstAttribute="centerX" secondItem="d9Q-km-BpE" secondAttribute="centerX" id="7au-f1-Buw"/>
+                            <constraint firstItem="1Nu-5y-R3f" firstAttribute="centerX" secondItem="d9Q-km-BpE" secondAttribute="centerX" constant="-10" id="KWY-Qj-GlY"/>
+                            <constraint firstItem="5Fz-3f-URM" firstAttribute="centerX" secondItem="d9Q-km-BpE" secondAttribute="centerX" id="LPm-Vr-mCA"/>
                             <constraint firstItem="JNc-vT-W1r" firstAttribute="centerX" secondItem="d9Q-km-BpE" secondAttribute="centerX" id="ZT3-Jo-D0J"/>
                             <constraint firstItem="1Nu-5y-R3f" firstAttribute="centerX" secondItem="d9Q-km-BpE" secondAttribute="centerX" id="ghI-m4-Qtp"/>
+                            <constraint firstItem="1Nu-5y-R3f" firstAttribute="centerX" secondItem="d9Q-km-BpE" secondAttribute="centerX" id="n4c-YE-QpO"/>
                             <constraint firstItem="1Nu-5y-R3f" firstAttribute="centerX" secondItem="d9Q-km-BpE" secondAttribute="centerX" id="n6W-ya-IVP"/>
-                            <constraint firstItem="1Nu-5y-R3f" firstAttribute="centerY" secondItem="d9Q-km-BpE" secondAttribute="centerY" id="pAQ-M5-Op5"/>
-                            <constraint firstItem="5Fz-3f-URM" firstAttribute="top" secondItem="IFa-9z-zbf" secondAttribute="bottom" constant="65" id="vvX-if-5vM"/>
                             <constraint firstItem="IFa-9z-zbf" firstAttribute="centerX" secondItem="d9Q-km-BpE" secondAttribute="centerX" id="yz6-gM-Cah"/>
                         </constraints>
                     </view>

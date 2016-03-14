@@ -18,8 +18,10 @@ class omakeViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -57,7 +59,15 @@ class omakeViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var secondVC = segue.destinationViewController as! textcomitViewController
         secondVC.scSelectedI1ndex = selectedIndex
+        
+        // 背景画像01
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "first_backview.jpg")?.drawInRect(self.view.bounds)
+        
+        let image: UIImage! = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        self.view.backgroundColor = UIColor(patternImage: image)
+        
     }
-
-   
 }
