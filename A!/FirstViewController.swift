@@ -109,13 +109,7 @@ class FirstViewController: UIViewController, AVAudioPlayerDelegate,UITableViewDe
         myAudioPlayer.delegate = self
         
         myAudioPlayer.play()
-
-        
-        
     }
-    
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

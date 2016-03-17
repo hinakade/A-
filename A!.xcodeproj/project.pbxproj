@@ -33,6 +33,8 @@
 		276BDB271C8810F000ADEA9A /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 276BDB111C8810F000ADEA9A /* iTunesArtwork@2x.png */; };
 		276BDB281C8810F000ADEA9A /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 276BDB121C8810F000ADEA9A /* README.md */; };
 		276BDB2A1C88247800ADEA9A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276BDB291C88247800ADEA9A /* AVFoundation.framework */; };
+		2782938C1C993E15007F9B29 /* maiku002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2782938B1C993E15007F9B29 /* maiku002.jpg */; };
+		2782938E1C994219007F9B29 /* yajirushi.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2782938D1C994219007F9B29 /* yajirushi.gif */; };
 		278A3AAE1C9146B1005A16B1 /* btnstart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 278A3AAD1C9146B1005A16B1 /* btnstart.mp3 */; };
 		2792594B1C719F9200855E43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2792594A1C719F9200855E43 /* AppDelegate.swift */; };
 		279259501C719F9200855E43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2792594E1C719F9200855E43 /* Main.storyboard */; };
@@ -109,6 +111,8 @@
 		276BDB111C8810F000ADEA9A /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		276BDB121C8810F000ADEA9A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		276BDB291C88247800ADEA9A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2782938B1C993E15007F9B29 /* maiku002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maiku002.jpg; sourceTree = "<group>"; };
+		2782938D1C994219007F9B29 /* yajirushi.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = yajirushi.gif; sourceTree = "<group>"; };
 		278A3AAD1C9146B1005A16B1 /* btnstart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = btnstart.mp3; sourceTree = "<group>"; };
 		279259471C719F9200855E43 /* A!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2792594A1C719F9200855E43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -241,6 +245,8 @@
 				278A3AAD1C9146B1005A16B1 /* btnstart.mp3 */,
 				274AB4461C7FFF1900802C30 /* recorder.mp3 */,
 				27E57C841C81F4170041AB3E /* yama.jpg */,
+				2782938D1C994219007F9B29 /* yajirushi.gif */,
+				2782938B1C993E15007F9B29 /* maiku002.jpg */,
 				276ADD021C82A8060064E2C0 /* Myapp.jpg */,
 				2792594A1C719F9200855E43 /* AppDelegate.swift */,
 				27185C4A1C73017F00E60B64 /* 002ViewController.swift */,
@@ -385,10 +391,12 @@
 				276BDB161C8810F000ADEA9A /* Icon-40@3x.png in Resources */,
 				27C5ED291C85664D00CF1FC3 /* LoadingView.xib in Resources */,
 				279573FA1C91539D0031639E /* backbtn.jpg in Resources */,
+				2782938E1C994219007F9B29 /* yajirushi.gif in Resources */,
 				276BDB171C8810F000ADEA9A /* Icon-60@2x.png in Resources */,
 				276BDB151C8810F000ADEA9A /* Icon-40@2x.png in Resources */,
 				279259501C719F9200855E43 /* Main.storyboard in Resources */,
 				276BDB1A1C8810F000ADEA9A /* Icon-76@2x.png in Resources */,
+				2782938C1C993E15007F9B29 /* maiku002.jpg in Resources */,
 				276BDB211C8810F000ADEA9A /* Icon-72@2x.png in Resources */,
 				276BDB1E1C8810F000ADEA9A /* Icon-Small@3x.png in Resources */,
 				27E57C851C81F4170041AB3E /* yama.jpg in Resources */,

@@ -17,6 +17,7 @@ class _02ViewController: UIViewController{
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var object: UIImageView!
     @IBOutlet weak var kekka: UIButton!
+    @IBOutlet weak var yajirushiPic: UIImageView!
         @IBOutlet weak var myiAdBanner: ADBannerView!
     
     @IBOutlet weak var resetBtn: UIButton!
@@ -24,8 +25,6 @@ class _02ViewController: UIViewController{
     var meterTimer: NSTimer!
     var audioPlayer:AVAudioPlayer!
     var picture = false
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,18 +37,16 @@ class _02ViewController: UIViewController{
         object.hidden = true
         resetBtn.hidden = true
         self.object.layer.masksToBounds = true
-        
+//        yajirushiPic.hidden = false
         //画像を丸く
         self.object.layer.cornerRadius = 50
         
         // 背景画像01の設定
-        var backView: [String] = ["yama.jpg","火山.jpg"]
+        var backView: [String] = ["yama.jpg"]
+//        ,"火山.jpg","yakei.jpg"
+        
         
         //角を丸く、枠に色をつける
-        
-   
-
-        
         UIGraphicsBeginImageContext(self.view.frame.size)
          var randomInt = Int(arc4random_uniform(UInt32(backView.count)))
         UIImage(named: backView[randomInt])?.drawInRect(self.view.bounds)
@@ -65,6 +62,9 @@ class _02ViewController: UIViewController{
         self.canDisplayBannerAds = true
         self.myiAdBanner.hidden = true
         //
+        //矢印
+        yajirushiPic.hidden = true
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -96,11 +96,13 @@ class _02ViewController: UIViewController{
         
 
         //アニメーション動く
+        
         UIView.animateWithDuration(1, animations: { () -> Void in
-            self.object.frame = CGRectMake(170, 0, 0, 0);
-            self.object.frame = CGRectMake(170, 50, 0, 20);
-            self.picture = false
             
+            self.object.frame = CGRectMake(170, 0, 0, 0);
+            self.yajirushiPic.hidden = true
+            self.picture = false
+           
                        },
             completion: { finished in
                 self.stopButton.hidden = false
@@ -111,6 +113,8 @@ class _02ViewController: UIViewController{
                 self.stopButton.enabled = true
 //                self.recordButton.setTitle("叫ぶ", forState:.Normal)
                 self.resetBtn.hidden = true
+                 self.yajirushiPic.hidden = false
+                self.yajirushiPic.hidden = true
             })
     }
 //////////////////////////////////////////////////////////////////////
@@ -145,6 +149,7 @@ class _02ViewController: UIViewController{
             print("鳥写真表示")
            
             object.image = UIImage(named: "Myapp.jpg")
+            yajirushiPic.hidden = true
            
             //録音終了
             print("stop")
@@ -154,6 +159,12 @@ class _02ViewController: UIViewController{
             resetBtn.hidden = false
             stopButton.hidden = true
             recordButton.hidden = true
+            yajirushiPic.hidden = false
+            
+            //画像変更を試みる
+            yajirushiPic.image = UIImage(named:"yajirushi.gif")
+
+            
             //self.recordButton.setTitle("叫び直し", forState:.Normal)
             let session:AVAudioSession = AVAudioSession.sharedInstance()
             var error: NSError?
@@ -178,6 +189,10 @@ class _02ViewController: UIViewController{
 //            録音
             self.recordWithPermission(true)
             self.resetBtn.hidden = true
+            yajirushiPic.hidden = false
+//            yajirushiPic.image = "maiku002.jpg"
+            
+            
         }
 
     }
@@ -189,9 +204,8 @@ class _02ViewController: UIViewController{
         stopButton.hidden = true
         recordButton.hidden = false
         stopButton.enabled = false
-        self.recordButton.setTitle("叫ぶ", forState:.Normal)
+        self.recordButton.setTitle("タップして叫ぶ", forState:.Normal)
         resetBtn.hidden = true
-        
         self.object.frame = CGRectMake(86, 152, 149, 128)
         self.object.hidden = false
         object.image = UIImage(named: "")

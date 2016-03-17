@@ -41,9 +41,15 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHs-Hq-a6s">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHs-Hq-a6s" customClass="SpringButton" customModule="A_" customModuleProvider="target">
                                 <rect key="frame" x="185" y="417" width="45" height="30"/>
                                 <state key="normal" title="おまけ"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="force">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="omake:" destination="Tf5-ca-F9r" eventType="touchUpInside" id="4yI-Kb-SJW"/>
                                     <segue destination="gdE-zu-TYl" kind="show" id="d5i-qR-0tK"/>
@@ -216,12 +222,19 @@
                                     <action selector="tapReset:" destination="l8p-hu-nh0" eventType="touchUpInside" id="DvR-1h-k8G"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="maiku002.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cq1-RJ-Ypn">
+                                <rect key="frame" x="132" y="85" width="150" height="133"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="GPu-aL-Dem"/>
+                                    <constraint firstAttribute="height" constant="133" id="f5r-Q2-dkD"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMs-sN-Jr4">
-                                <rect key="frame" x="171" y="425" width="73" height="42"/>
+                                <rect key="frame" x="132" y="422" width="159" height="42"/>
                                 <color key="backgroundColor" red="0.81568627449999997" green="0.47843137250000001" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" red="0.49981255229999999" green="0.57760933690000005" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="叫ぶ" backgroundImage="backbtn.jpg">
+                                <state key="normal" title="タップして叫ぶ" backgroundImage="backbtn.jpg">
                                     <color key="titleColor" red="1" green="0.98627954943326646" blue="0.9826285981491546" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -232,10 +245,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cq1-RJ-Ypn" firstAttribute="centerX" secondItem="F3F-EV-CqC" secondAttribute="centerX" id="4bi-JU-2u7"/>
                             <constraint firstItem="i5T-Tb-jgg" firstAttribute="centerY" secondItem="F3F-EV-CqC" secondAttribute="centerY" id="8Ao-H1-vIx"/>
+                            <constraint firstItem="cq1-RJ-Ypn" firstAttribute="centerX" secondItem="F3F-EV-CqC" secondAttribute="centerX" id="9aQ-8c-5dB"/>
                             <constraint firstItem="EMs-sN-Jr4" firstAttribute="centerY" secondItem="F3F-EV-CqC" secondAttribute="centerY" constant="79" id="DMD-nE-5lY"/>
                             <constraint firstItem="YgX-qS-4Ux" firstAttribute="top" secondItem="i5T-Tb-jgg" secondAttribute="bottom" id="Dxa-b2-dhX"/>
                             <constraint firstItem="erc-Un-zmL" firstAttribute="top" secondItem="EMs-sN-Jr4" secondAttribute="bottom" constant="22" id="HNJ-iS-Eza"/>
+                            <constraint firstItem="cq1-RJ-Ypn" firstAttribute="centerX" secondItem="F3F-EV-CqC" secondAttribute="centerX" id="SMd-5x-gDe"/>
                             <constraint firstItem="3yK-65-bIQ" firstAttribute="centerY" secondItem="F3F-EV-CqC" secondAttribute="centerY" id="bgT-ww-qzn">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value=""/>
@@ -257,6 +273,7 @@
                         <outlet property="recordButton" destination="EMs-sN-Jr4" id="2ob-SU-MAd"/>
                         <outlet property="resetBtn" destination="erc-Un-zmL" id="h0Q-KY-pFk"/>
                         <outlet property="stopButton" destination="3yK-65-bIQ" id="Jfh-UK-6TT"/>
+                        <outlet property="yajirushiPic" destination="cq1-RJ-Ypn" id="J6I-1n-p0e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byP-Hp-mPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -370,6 +387,7 @@ CDgw54K5A
     <resources>
         <image name="Myapp.jpg" width="500" height="500"/>
         <image name="backbtn.jpg" width="200" height="50"/>
+        <image name="maiku002.jpg" width="200" height="200"/>
     </resources>
     <color key="tintColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
